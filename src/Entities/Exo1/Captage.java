@@ -1,6 +1,6 @@
 package Entities.Exo1;
 
-public class Captage implements Comparable<Captage>
+public class Captage
 {
     protected int id;
     protected String nom;
@@ -25,18 +25,5 @@ public class Captage implements Comparable<Captage>
     public String getDescription(){
         String description = this.nom+" - "+this.hauteur+" mètres - "+this.debitMax+" litres";
         return description;
-    }
-
-    @Override
-    public int compareTo(Captage captage) {
-        if(this.debitMax == captage.debitMax){
-            return 0;
-        }
-        else if(this.debitMax > captage.debitMax){
-            return 1;
-        }
-        else{
-            return -1;
-        }
     }
 }
