@@ -19,6 +19,6 @@ public class Cuve extends Captage implements IVolume
     @Override
     public double getVolume() {
         double volume = this.longueur * this.largeur;
-        return volume;
+        return Math.round(volume);
     }
 }

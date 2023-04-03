@@ -35,6 +35,26 @@ public class ModelJTable extends AbstractTableModel
     public void loadDatasCaptage(ArrayList<Captage> uneListe)
     {
         // A compléter ici
+        colonnes = new String[]{"Numéro","Description","Volume"};
+        lignes = new Object[uneListe.size()][3];
 
+        int i = 0;
+        for(Captage captage: uneListe){
+            lignes[i][0] = captage.getId();
+            lignes[i][1] = captage.getDescription();
+            if(captage instanceof Cuve){
+                Cuve cuve = (Cuve) captage;
+                lignes[i][2] = cuve.getVolume();
+            }
+            else if(captage instanceof Forage){
+                Forage forage = (Forage) captage;
+                lignes[i][2] = forage.getVolume();
+            }
+            else{
+                lignes[i][2] = "";
+            }
+            i++;
+        }
+        fireTableChanged(null);
     }
 }

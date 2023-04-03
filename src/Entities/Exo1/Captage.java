@@ -18,6 +18,10 @@ public class Captage implements Comparable<Captage>
         return id;
     }
 
+    public int getDebitMax() {
+        return debitMax;
+    }
+
     public String getDescription(){
         String description = this.nom+" - "+this.hauteur+" mètres - "+this.debitMax+" litres";
         return description;

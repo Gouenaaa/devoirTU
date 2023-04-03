@@ -17,6 +17,6 @@ public class Forage extends Captage implements IVolume
     @Override
     public double getVolume() {
         double volume = Math.PI * this.diametre * super.hauteur;
-        return volume;
+        return Math.round(volume);
     }
 }

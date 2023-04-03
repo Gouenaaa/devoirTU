@@ -8,6 +8,7 @@ import Tools.ModelJTable;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class FrmMenu extends JFrame{
     private JPanel pnlRoot;
@@ -23,8 +24,14 @@ public class FrmMenu extends JFrame{
         this.pack();
         this.setLocationRelativeTo(null);
 
+        mdl = new ModelJTable();
         mesCaptages = new ArrayList<>();
         LoadDatas();
+
+
+        mdl.loadDatasCaptage(mesCaptages);
+        tblCaptages.setModel(mdl);
+
 
 
 
@@ -44,6 +51,7 @@ public class FrmMenu extends JFrame{
         mesCaptages.add(cap1);mesCaptages.add(cap2);
         mesCaptages.add(for1);mesCaptages.add(for2);
         mesCaptages.add(cuve1);mesCaptages.add(cuve2);
-        C
+
+        mesCaptages.sort(Comparator.comparing(Captage::getDebitMax));
     }
 }
