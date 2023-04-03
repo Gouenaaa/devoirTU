@@ -74,14 +74,12 @@ class FormationTest
         // Cas n°1 : On ajoute les 2 premiers participants à la formation
         formation.AjouterParticipant(participant1);
         formation.AjouterParticipant(participant2);
-        // 300 - 170,1
-        assertEquals(129.9, formation.BeneficeFormation());
+        assertEquals(-20, formation.BeneficeFormation());
         // Cas n°2 : on ajoute le reste des participants
         formation.AjouterParticipant(participant3);
         formation.AjouterParticipant(participant4);
         formation.AjouterParticipant(participant5);
-        // 750 - 170,1 - 209,79 - 64,26
-        assertEquals(305.85, formation.BeneficeFormation());
+        assertEquals(6.0, formation.BeneficeFormation());
 
     }
 }

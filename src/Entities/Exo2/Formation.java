@@ -68,7 +68,7 @@ public class Formation
     public double BeneficeFormation()
     {
         // A compléter ici
-        double benefice = lesParticipants.size() * prixFormation - CalculerFraisRemboursementKilometriques();
-        return  benefice;
+        double benefice = GetNombreDePresents() * prixFormation - CalculerFraisRemboursementKilometriques();
+        return  Math.round(benefice);
     }
 }
