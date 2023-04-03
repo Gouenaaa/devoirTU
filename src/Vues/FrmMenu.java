@@ -24,20 +24,13 @@ public class FrmMenu extends JFrame{
         this.pack();
         this.setLocationRelativeTo(null);
 
-        mdl = new ModelJTable();
         mesCaptages = new ArrayList<>();
         LoadDatas();
 
-
+        // A compléter ici
+        mdl = new ModelJTable();
         mdl.loadDatasCaptage(mesCaptages);
         tblCaptages.setModel(mdl);
-
-
-
-
-
-
-        // A compléter ici
     }
 
     public void LoadDatas()
